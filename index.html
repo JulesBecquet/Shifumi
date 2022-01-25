@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shifumi</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <main>
+    <div class="title">
+      <h1>Shifumi</h1>
+      <h2>ストーンシートシザース</h2>
+    </div>
+    <div class="usernameBlock">
+      <h2>Choisissez votre pseudo</h2>
+      <input type="text" name="usernameInput" id="usernameInput" placeholder="Pseudo" autocomplete="off">
+      <input type="button" value="Continuer" class="continueInput">
+    </div>
+    <div class="modeGame">
+      <p class="hello"></p>
+      <input type="button" value="Contre l'ordinateur">
+      <div class="line"></div>
+      <input type="button" value="A plusieurs">
+    </div>
+    <div class="gameBlock">
+      <div class="titlePlayMat">
+        <h2>Shifumi</h2>
+        <h3>ストーンシートシザース</h3>
+      </div>
+      <div class="cardComputer">
+        <img src="assets/img/dos de carte.png" alt="dos de carte">
+        <img src="assets/img/dos de carte.png" alt="dos de carte">
+        <img src="assets/img/dos de carte.png" alt="dos de carte">
+      </div>
+      <div class="cardPlayer">
+        <img src="assets/img/La feuille.png" alt="carte feuille" class="cardFeuille" draggable="true" id="dragFeuille">
+        <img src="assets/img/Le ciseaux.png" alt="carte ciseaux" class="cardCiseaux" draggable="true" id="dragCiseaux">
+        <img src="assets/img/La pierre.png" alt="carte pierre" class="cardPierre" draggable="true" id="dragPierre">
+      </div>
+      <div class="score">
+        <h2 class="scoreComputer">0</h2>
+        <h3>0%</h3>
+        <div class="lineScore"></div>
+        <h3>0%</h3>
+        <h2 class="scorePlayer">0</h2>
+      </div>
+      <div id="dragDrop"></div>
+      <div class="svgBanniere">
+        <div class="playMat"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="350" viewBox="0 0 109 454" class="banniere1">
+          <g id="banniere1" transform="translate(-737 -43.859)">
+            <g id="Rectangle_25" data-name="Rectangle 25" transform="translate(737 43.859)" fill="#f2e8cf"
+              stroke="#535666" stroke-width="3">
+              <rect width="109" height="454" stroke="none" />
+              <rect x="1.5" y="1.5" width="106" height="451" fill="none" />
+            </g>
+            <g id="Rectangle_26" data-name="Rectangle 26" transform="translate(745 53.859)" fill="#f2e8cf"
+              stroke="#535666" stroke-width="3">
+              <rect width="93" height="434" stroke="none" />
+              <rect x="1.5" y="1.5" width="90" height="431" fill="none" />
+            </g>
+            <text id="ストーンシートシザース" transform="translate(804 472.859) rotate(-90)" fill="#374663" font-size="36"
+              font-family="PingFangSC-Regular, PingFang SC">
+              <tspan x="0" y="0">ストーンシートシザース</tspan>
+            </text>
+          </g>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="350" viewBox="0 0 109 454" class="banniere2">
+          <g id="banniere2" transform="translate(-737 -43.859)">
+            <g id="Rectangle_25" data-name="Rectangle 25" transform="translate(737 43.859)" fill="#f2e8cf"
+              stroke="#535666" stroke-width="3">
+              <rect width="109" height="454" stroke="none" />
+              <rect x="1.5" y="1.5" width="106" height="451" fill="none" />
+            </g>
+            <g id="Rectangle_26" data-name="Rectangle 26" transform="translate(745 53.859)" fill="#f2e8cf"
+              stroke="#535666" stroke-width="3">
+              <rect width="93" height="434" stroke="none" />
+              <rect x="1.5" y="1.5" width="90" height="431" fill="none" />
+            </g>
+            <text id="ストーンシートシザース" transform="translate(804 472.859) rotate(-90)" fill="#374663" font-size="36"
+              font-family="PingFangSC-Regular, PingFang SC">
+              <tspan x="0" y="0">ストーンシートシザース</tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="win">
+      <h2>Victoire</h2>
+    </div>
+    <div class="lose">
+      <h2>Perdu</h2>
+    </div>
+    <div class="equality">
+      <h2>Egalité</h2>
+    </div>
+  </main>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

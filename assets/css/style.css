@@ -1,0 +1,316 @@
+ * {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Hiromisake';
+  src: url(../font/HIROMISAKE.ttf);
+}
+
+@font-face {
+  font-family: 'CoolveticaRegular';
+  src: url(../font/coolvetica/coolvetica\ condensed\ rg.otf);
+}
+
+body {
+  background-color: #3D5F8B;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+  display: none;
+}
+
+.title h1 {
+  font-family: 'Hiromisake';
+  color: #fff;
+  font-size: 10vh;
+}
+
+.title h2 {
+  font-family: 'Hiromisake';
+  color: #fff;
+  font-size: 2vh;
+}
+
+.usernameBlock {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  display: none;
+}
+
+.usernameBlock h2 {
+  font-family: 'CoolveticaRegular';
+  color: #fff;
+  font-size: 4vh;
+  margin-bottom: 3vh;
+}
+
+#usernameInput {
+  border: hidden;
+  border-radius: 50px;
+  width: 30vw;
+  height: 6vh;
+  font-family: 'CoolveticaRegular';
+  margin-bottom: 5vh;
+  text-align: center;
+  font-size: 3vh;
+}
+
+.usernameBlock input[type="button"] {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 0 #213B5C;
+    border: hidden;
+    border-radius: 50px;
+    background-color: #5880B4;
+    color: #fff;
+    font-family: 'CoolveticaRegular';
+    width: 10vw;
+    height: 5vh;
+    font-size: 3vh;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.modeGame {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  display: none;
+}
+
+.modeGame p {
+  font-family: 'CoolveticaRegular';
+  color: #fff;
+  font-size: 4vh;
+  margin-bottom: 4.5vh;
+}
+
+.line {
+  width: 30vw;
+  height: 2px;
+  background-color: #fff;
+}
+
+.modeGame input:nth-child(2) {
+  border: none;
+  box-shadow: 0 2px 0 #213B5C;
+  border: hidden;
+  border-radius: 50px;
+  background-color: #5880B4;
+  color: #fff;
+  font-family: 'CoolveticaRegular';
+  width: 20vw;
+  height: 6vh;
+  font-size: 4.5vh;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 3vh;
+}
+
+.modeGame input:nth-child(4) {
+  border: none;
+  box-shadow: 0 2px 0 #213B5C;
+  border: hidden;
+  border-radius: 50px;
+  background-color: #5880B4;
+  color: #fff;
+  font-family: 'CoolveticaRegular';
+  width: 20vw;
+  height: 6vh;
+  font-size: 4.5vh;
+  text-align: center;
+  margin-top: 3vh;
+}
+
+.titlePlayMat {
+  transform:rotate(-90deg);
+  margin-left: 5vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 10vw;
+  z-index: 1;
+}
+
+.titlePlayMat h2 {
+  font-family: 'Hiromisake';
+  color: #fff;
+  font-size: 10vh;
+}
+
+.titlePlayMat h3 {
+  font-family: 'Hiromisake';
+  color: #fff;
+  font-size: 1.5vh;
+}
+
+.score {
+  margin-left: 5vh;
+  color: #fff;
+  font-family: 'Hiromisake';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 10vw;
+  z-index: 1;
+}
+
+.score h2 {
+  font-size: 12vh;
+}
+
+.lineScore {
+  background-color: #fff;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  height: 2px;
+  width: 10vh;
+}
+
+.gameBlock {
+  width: 100vw;
+  height: 100vh;
+}
+
+.svgBanniere {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(10, 10vw);
+  grid-template-rows: repeat(10, 10vh);
+}
+
+.playMat {
+  border:2px solid #fff;
+  width: 70vw;
+  height: 90vh;
+  grid-column: 2/10;
+  grid-row: 1/10;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vh;
+}
+
+.banniere1 {
+  grid-column: 2/3;
+  grid-row: 2/6;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banniere2 {
+  grid-column: 9/10;
+  grid-row: 5/10;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardComputer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0%, -50%);
+}
+
+.cardComputer img:nth-child(1) {
+  width: 250px;
+  transform: rotate(25deg) translate(0%, -10%);
+}
+
+.cardComputer img:nth-child(2) {
+  width: 250px;
+}
+
+.cardComputer img:nth-child(3) {
+  width: 250px;
+  transform: rotate(-25deg) translate(0%, -10%);
+}
+
+.cardPlayer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0%, 30%);
+}
+
+.cardFeuille {
+  width: 250px;
+  transform: rotate(-205deg) translate(0%, -10%);
+}
+
+.cardCiseaux {
+  width: 250px;
+  transform: rotate(-180deg);
+}
+
+.cardPierre {
+  width: 250px;
+  transform: rotate(205deg) translate(0%, -10%);
+}
+
+#dragDrop {
+  width: 150px;
+  height: 224px;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'CoolveticaRegular';
+  font-size: 3vh;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+}
+
+.cardFeuilleDrop {
+  width: 150px;
+  transform: rotate(-180deg) translate(0%, 0%);
+}
+
+.cardCiseauxDrop {
+  width: 150px;
+  transform: rotate(-180deg);
+}
+
+.cardPierreDrop {
+  width: 150px;
+  transform: rotate(180deg) translate(0%, 0%);
+}
