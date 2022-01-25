@@ -8,6 +8,14 @@ continueInput.addEventListener('click', function () {
   document.querySelector('.modeGame').style.display = 'flex';
 })
 
+var vsComputer = document.querySelector('.vsComputer');
+
+vsComputer.addEventListener('click', function() {
+  document.querySelector('.title').style.display = 'none';
+  document.querySelector('.modeGame').style.display = 'none';
+  document.querySelector('.gameBlock').style.display = 'flex';
+})
+
 
 var windowWin = document.querySelector('.win');
 var windowLose = document.querySelector('.lose');
@@ -38,10 +46,9 @@ dropZone.addEventListener('dragover', function (ev) {
 dropZone.addEventListener('drop', function (ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+  ev.target.innerHTML = document.getElementById(data).outerHTML;
   switch (data) {
     case 'dragFeuille':
-      cardFeuille.classList.add("cardFeuilleDrop");
       cardFeuille.value = "feuille";
       userChoice = cardFeuille.value;
       comChoice = randomComputer();
@@ -52,18 +59,19 @@ dropZone.addEventListener('drop', function (ev) {
           break;
         case "ciseaux":
           windowLose.style.display = "flex";
-          document.querySelector('.scoreComputer').textContent = +1;
+          document.querySelector('.scoreComputer').textContent = parseInt(document.querySelector('.scoreComputer').textContent) + 1;
+          pourcentage()
           break;
         case "pierre":
           windowWin.style.display = "flex";
-          document.querySelector('.scorePlayer').textContent = +1;
+          document.querySelector('.scorePlayer').textContent = parseInt(document.querySelector('.scorePlayer').textContent) + 1;
+          pourcentage()
           break;
       }
 
       break;
 
     case 'dragPierre':
-      cardPierre.classList.add("cardPierreDrop");
       cardPierre.value = "pierre";
       userChoice = cardPierre.value;
       comChoice = randomComputer();
@@ -74,18 +82,19 @@ dropZone.addEventListener('drop', function (ev) {
           break;
         case "feuille":
           windowLose.style.display = "flex";
-          document.querySelector('.scoreComputer').textContent = +1;
+          document.querySelector('.scoreComputer').textContent = parseInt(document.querySelector('.scoreComputer').textContent) + 1;
+          pourcentage()
           break;
         case "ciseaux":
           windowWin.style.display = "flex";
-          document.querySelector('.scorePlayer').textContent = +1;
+          document.querySelector('.scorePlayer').textContent = parseInt(document.querySelector('.scorePlayer').textContent) + 1;
+          pourcentage()
           break;
       }
 
       break;
 
     case 'dragCiseaux':
-      cardCiseaux.classList.add("cardCiseauxDrop");
       cardCiseaux.value = "ciseaux";
       userChoice = cardCiseaux.value;
       comChoice = randomComputer();
@@ -96,11 +105,13 @@ dropZone.addEventListener('drop', function (ev) {
           break;
         case "pierre":
           windowLose.style.display = "flex";
-          document.querySelector('.scoreComputer').textContent = +1;
+          document.querySelector('.scoreComputer').textContent = parseInt(document.querySelector('.scoreComputer').textContent) + 1;
+          pourcentage()
           break;
         case "feuille":
           windowWin.style.display = "flex";
-          document.querySelector('.scorePlayer').textContent = +1;
+          document.querySelector('.scorePlayer').textContent = parseInt(document.querySelector('.scorePlayer').textContent) + 1;
+          pourcentage()
           break;
       }
 
@@ -116,7 +127,6 @@ dropZone.addEventListener('drop', function (ev) {
 let choices = ["cardPierre", "cardFeuille", "cardCiseaux"];
 var userChoice = "";
 var comChoice = "";
-var result = document.getElementById("result");
 
 
 function randomComputer() {
@@ -137,12 +147,19 @@ function randomComputer() {
 }
 
 function reset() {
-  while (dragDrop.firstChild) {
-    dragDrop.removeChild(dragDrop.firstChild);
-  }
-  var cardPlayer = document.querySelector('.cardPlayer');
-  cardPlayer.innerHTML = `<img src="assets/img/La feuille.png" alt="carte feuille" class="cardFeuille" draggable="true" id="dragFeuille">` + `<img src="assets/img/Le ciseaux.png" alt="carte ciseaux" class="cardCiseaux" draggable="true" id="dragCiseaux">` + `<img src="assets/img/La pierre.png" alt="carte pierre" class="cardPierre" draggable="true" id="dragPierre">`;
+  dropZone.innerHTML = '';
   windowEquality.style.display = "none";
   windowLose.style.display = "none";
   windowWin.style.display = "none";
+}
+
+function pourcentage() {
+  var scorePlayer = parseInt(document.querySelector('.scorePlayer').textContent);
+  var scoreComputer = parseInt(document.querySelector('.scoreComputer').textContent);
+
+  var pourcentagePlayer = document.querySelector('.pourcentagePlayer');
+  var pourcentageComputer = document.querySelector('.pourcentageComputer');
+
+  pourcentagePlayer.innerHTML = Math.round(scorePlayer / (scorePlayer + scoreComputer) * 100) + '%';
+  pourcentageComputer.innerHTML = Math.round(scoreComputer / (scorePlayer + scoreComputer) * 100) + '%';
 }

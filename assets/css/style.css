@@ -28,7 +28,6 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 8vh;
-  display: none;
 }
 
 .title h1 {
@@ -50,7 +49,6 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 20vh;
-  display: none;
 }
 
 .usernameBlock h2 {
@@ -199,6 +197,7 @@ body {
 .gameBlock {
   width: 100vw;
   height: 100vh;
+  display: none;
 }
 
 .svgBanniere {
@@ -300,18 +299,21 @@ body {
   transform: translate(-55%, -50%);
 }
 
-.cardFeuilleDrop {
+#dragDrop .cardFeuille {
   width: 150px;
+  height: 224px;
   transform: rotate(-180deg) translate(0%, 0%);
 }
 
-.cardCiseauxDrop {
+#dragDrop .cardCiseaux {
   width: 150px;
+  height: 224px;
   transform: rotate(-180deg);
 }
 
-.cardPierreDrop {
+#dragDrop .cardPierre {
   width: 150px;
+  height: 224px;
   transform: rotate(180deg) translate(0%, 0%);
 }
 
