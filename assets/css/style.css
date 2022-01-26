@@ -182,8 +182,20 @@ body {
   z-index: 1;
 }
 
-.score h2 {
+.scoreComputer, .scorePlayer {
   font-size: 12vh;
+}
+
+.playMatUsername {
+  font-size: 6vh;
+  padding: 5vh;
+  margin-top: 10vh;
+}
+
+.PlayMatComputerName {
+  font-size: 6vh;
+  padding: 5vh;
+  margin-bottom: 10vh;
 }
 
 .lineScore {
@@ -317,11 +329,12 @@ body {
   transform: rotate(180deg) translate(0%, 0%);
 }
 
-.win {
+.popUp {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   color: #fff;
   font-family: 'Hiromisake';
@@ -335,38 +348,23 @@ body {
   display: none;
 }
 
-.lose {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-family: 'Hiromisake';
-  font-size: 20vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 200;
-  background-color: rgba(0, 0, 0, 0.693);
+.choiceComputer {
+  font-size: 3vh;
+}
+
+.win {
   display: none;
 }
 
 .equality {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-family: 'Hiromisake';
-  font-size: 20vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 200;
-  background-color: rgba(0, 0, 0, 0.693);
   display: none;
+}
+
+.lose { 
+  display: none;
+}
+
+.cardComputerReveal img {
+  margin-top: 5vh;
+  width: 250px;
 }

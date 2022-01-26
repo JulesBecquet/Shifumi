@@ -14,6 +14,7 @@ vsComputer.addEventListener('click', function() {
   document.querySelector('.title').style.display = 'none';
   document.querySelector('.modeGame').style.display = 'none';
   document.querySelector('.gameBlock').style.display = 'flex';
+  document.querySelector('.playMatUsername').textContent = `${username}`
 })
 
 
@@ -47,6 +48,7 @@ dropZone.addEventListener('drop', function (ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.innerHTML = document.getElementById(data).outerHTML;
+  document.querySelector('.popUp').style.display = "flex";
   switch (data) {
     case 'dragFeuille':
       cardFeuille.value = "feuille";
@@ -114,9 +116,27 @@ dropZone.addEventListener('drop', function (ev) {
           pourcentage()
           break;
       }
-
       break;
-  }
+    }
+    switch(comChoice) {
+      case 'pierre':
+        if (comChoice == "pierre") {
+          document.querySelector('.cardComputerReveal').innerHTML = '<img src="assets/img/La pierre.png" alt="carte pierre" class="computerRevealRock">';
+        }
+      break;
+      
+      case 'ciseaux':
+          if (comChoice == "ciseaux") {
+            document.querySelector('.cardComputerReveal').innerHTML = '<img src="assets/img/Le ciseaux.png" alt="carte ciseaux" class="computerRevealScissors">';
+          }
+      break;
+
+      case 'feuille':
+        if (comChoice == "feuille") {
+          document.querySelector('.cardComputerReveal').innerHTML = '<img src="assets/img/La feuille.png" alt="carte papier" class="computerRevealPaper">';
+        }
+      break;
+    }
 
   setTimeout(function () {
     reset();
@@ -151,6 +171,7 @@ function reset() {
   windowEquality.style.display = "none";
   windowLose.style.display = "none";
   windowWin.style.display = "none";
+  document.querySelector('.popUp').style.display = "none";
 }
 
 function pourcentage() {
