@@ -368,3 +368,66 @@ body {
   margin-top: 5vh;
   width: 250px;
 }
+
+@media screen and (max-width: 750px) {
+  .cardPlayer {
+    transform: translate(0%);
+    position: absolute;
+  }
+
+  .cardPierre {
+    transform: rotate(0);
+    width: 20vh;
+    z-index: 200;
+  }
+
+  .cardFeuille {
+    width: 20vh;
+    transform: rotate(0);
+  }
+
+  .titlePlayMat {
+    display: none;
+  }
+
+  .banniere1 {
+    grid-column: 1/2;
+    grid-row: 3/7;
+  }
+
+  .banniere2 {
+    grid-row: 3/8;
+    grid-column: 10/12;
+  }
+
+  .score {
+    position: fixed;
+    left: 55vh;
+    bottom: 9vh;
+    z-index: 10;
+  }
+
+
+
+  .pourcentageComputer {
+    display: none;
+  }
+
+
+
+  .pourcentagePlayer {
+    display: none;
+  }
+
+  .win {
+    font-size: 10vh;
+  }
+
+  .equality {
+    font-size: 10vh;
+  }
+
+  .lose {
+    font-size: 10vh;
+  }
+}
