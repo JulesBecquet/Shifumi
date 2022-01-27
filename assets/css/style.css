@@ -369,21 +369,82 @@ body {
   width: 250px;
 }
 
+
+
+/* 
+.playMatvsPlayer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardPlayerOne {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardPlayerOne img {
+  width: 150px;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.cardPlayerTwo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardPlayerTwo img {
+  width: 150px;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+ */
+
+
+
+
+
+
 @media screen and (max-width: 750px) {
+
+  body {
+    overflow: hidden;
+  }
+
   .cardPlayer {
     transform: translate(0%);
     position: absolute;
+    bottom: 0;
+    z-index: 300;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .cardPierre {
-    transform: rotate(0);
-    width: 20vh;
-    z-index: 200;
+  .cardPlayer img {
+    width: 15vh;
+    transform: translate(0%, 0%) rotate(0);
   }
 
-  .cardFeuille {
-    width: 20vh;
-    transform: rotate(0);
+  .cardComputer {
+    transform: translate(0%);
+    position: absolute;
+    top: 0;
+    z-index: 300;
+  }
+
+  .cardComputer img:nth-child(1) {
+    width: 15vh;
+    transform: rotate(0deg);
+  }
+
+  .cardComputer img:nth-child(2) {
+    width: 15vh;
+  }
+
+  .cardComputer img:nth-child(3) {
+    width: 15vh;
+    transform: rotate(0deg);
   }
 
   .titlePlayMat {
@@ -391,22 +452,30 @@ body {
   }
 
   .banniere1 {
-    grid-column: 1/2;
-    grid-row: 3/7;
+    display: none;
   }
 
   .banniere2 {
-    grid-row: 3/8;
-    grid-column: 10/12;
+    display: none;
+  }
+
+  .playMat {
+    display: none;
   }
 
   .score {
-    position: fixed;
-    left: 55vh;
-    bottom: 9vh;
-    z-index: 10;
+    position: absolute;
+    right: 0;
+    margin-right: 3vh;
   }
 
+  .PlayMatComputerName {
+    display: none;
+  }
+
+  .playMatUsername {
+    display: none;
+  }
 
 
   .pourcentageComputer {
@@ -419,6 +488,11 @@ body {
     display: none;
   }
 
+  .popUp {
+    position: absolute;
+    z-index: 10000;
+  }
+
   .win {
     font-size: 10vh;
   }
@@ -429,5 +503,23 @@ body {
 
   .lose {
     font-size: 10vh;
+  }
+
+  .usernameBlock input[type="button"] {
+    width: 25vw;
+
+  }
+
+  #usernameInput {
+    width: 35vw;
+
+  }
+
+  .modeGame input:nth-child(2) {
+    width: 60vw;
+  }
+
+  .modeGame input:nth-child(4) {
+    width: 35vw;
   }
 }

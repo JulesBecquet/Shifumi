@@ -184,3 +184,123 @@ function pourcentage() {
   pourcentagePlayer.innerHTML = Math.round(scorePlayer / (scorePlayer + scoreComputer) * 100) + '%';
   pourcentageComputer.innerHTML = Math.round(scoreComputer / (scorePlayer + scoreComputer) * 100) + '%';
 }
+
+
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+var vsPlayer = document.querySelector('.vsPlayer');
+
+vsPlayer.addEventListener('click', function() {
+  document.querySelector('.title').style.display = 'none';
+  document.querySelector('.modeGame').style.display = 'none';
+})
+
+
+const mq = window.matchMedia("(max-width: 750px)");
+
+if (mq.matches) { 
+  
+  var allCardsPlayerOne = document.querySelectorAll('.allCardsPlayerOne');
+
+  allCardsPlayerOne.forEach(function(PLone) {
+    PLone.addEventListener('click', function() {
+      PLone = this.id;
+      document.querySelector('.popUp').style.display = "flex";
+      switch (PLone) {
+        case 'dragFeuille':
+          cardFeuille.value = "feuille";
+          userChoice = cardFeuille.value;
+          comChoice = randomComputer();
+          document.querySelector('#dragDrop').innerHTML = '<img src="assets/img/La feuille.png" alt="carte feuille" class="cardFeuille allCardsPlayerOne" draggable="true" id="dragFeuille">';
+          switch (comChoice) {
+            case "feuille":
+              windowEquality.style.display = "flex";
+              break;
+            case "ciseaux":
+              windowLose.style.display = "flex";
+              document.querySelector('.scoreComputer').textContent = parseInt(document.querySelector('.scoreComputer').textContent) + 1;
+              pourcentage()
+              break;
+            case "pierre":
+              windowWin.style.display = "flex";
+              document.querySelector('.scorePlayer').textContent = parseInt(document.querySelector('.scorePlayer').textContent) + 1;
+              pourcentage()
+              break;
+          }
+    
+          break;
+    
+        case 'dragPierre':
+          cardPierre.value = "pierre";
+          userChoice = cardPierre.value;
+          comChoice = randomComputer();
+          document.querySelector('#dragDrop').innerHTML = '<img src="assets/img/Le ciseaux.png" alt="carte ciseaux" class="cardCiseaux allCardsPlayerOne" draggable="true" id="dragCiseaux">';
+          switch (comChoice) {
+            case "pierre":
+              windowEquality.style.display = "flex";
+              break;
+            case "feuille":
+              windowLose.style.display = "flex";
+              document.querySelector('.scoreComputer').textContent = parseInt(document.querySelector('.scoreComputer').textContent) + 1;
+              pourcentage()
+              break;
+            case "ciseaux":
+              windowWin.style.display = "flex";
+              document.querySelector('.scorePlayer').textContent = parseInt(document.querySelector('.scorePlayer').textContent) + 1;
+              pourcentage()
+              break;
+          }
+    
+          break;
+    
+        case 'dragCiseaux':
+          cardCiseaux.value = "ciseaux";
+          userChoice = cardCiseaux.value;
+          comChoice = randomComputer();
+          document.querySelector('#dragDrop').innerHTML = '<img src="assets/img/La pierre.png" alt="carte pierre" class="cardPierre allCardsPlayerOne" draggable="true" id="dragPierre">';
+          switch (comChoice) {
+            case "ciseaux":
+              windowEquality.style.display = "flex";
+              break;
+            case "pierre":
+              windowLose.style.display = "flex";
+              document.querySelector('.scoreComputer').textContent = parseInt(document.querySelector('.scoreComputer').textContent) + 1;
+              pourcentage()
+              break;
+            case "feuille":
+              windowWin.style.display = "flex";
+              document.querySelector('.scorePlayer').textContent = parseInt(document.querySelector('.scorePlayer').textContent) + 1;
+              pourcentage()
+              break;
+          }
+          break;
+        }
+        switch(comChoice) {
+          case 'pierre':
+            if (comChoice == "pierre") {
+              document.querySelector('.cardComputerReveal').innerHTML = '<img src="assets/img/La pierre.png" alt="carte pierre" class="computerRevealRock">';
+            }
+          break;
+          
+          case 'ciseaux':
+              if (comChoice == "ciseaux") {
+                document.querySelector('.cardComputerReveal').innerHTML = '<img src="assets/img/Le ciseaux.png" alt="carte ciseaux" class="computerRevealScissors">';
+              }
+          break;
+    
+          case 'feuille':
+            if (comChoice == "feuille") {
+              document.querySelector('.cardComputerReveal').innerHTML = '<img src="assets/img/La feuille.png" alt="carte papier" class="computerRevealPaper">';
+            }
+          break;
+        }
+    
+      setTimeout(function () {
+        reset();
+      }, 1500);
+
+      }
+    )
+  })
+}
+
