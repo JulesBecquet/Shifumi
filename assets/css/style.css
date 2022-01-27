@@ -478,15 +478,11 @@ body {
   }
 
 
-  .pourcentageComputer {
-    display: none;
-  }
+ 
 
 
 
-  .pourcentagePlayer {
-    display: none;
-  }
+  
 
   .popUp {
     position: absolute;
